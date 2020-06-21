@@ -1,0 +1,28 @@
+#ifndef _USART_H
+#define _USART_H
+
+#include <stdio.h>
+#include "stm32f4xx.h"
+
+/**
+ * @brief  connected to USART2
+ */ 
+#define USARTx                   		 USART2
+#define USART_CLKx                   RCC_APB1Periph_USART2
+
+#define USART_TX_PIN                 GPIO_Pin_2
+#define USART_RX_PIN                 GPIO_Pin_3
+#define USART_GPIO_PORT           	 GPIOC
+#define USART_GPIO_CLK            	 RCC_AHB1Periph_GPIOC
+
+#define USART_TX_SOURCE              GPIO_PinSource2
+#define USART_RX_SOURCE              GPIO_PinSource3
+#define USART_AF                 		 GPIO_AF_USART2
+
+#define USARTx_IRQn                  USART2_IRQn
+
+
+void USART_Configuration(void);
+void USART_NVIC_Config(void);
+
+#endif /*_USART_H*/
